@@ -1,0 +1,33 @@
+<html ng-app="toDoApp">
+<head>
+    <title>Todo App </title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="TodoController as TodoCtrl">
+    <h1>TodoApp</h1>
+    <p>Add a Todo:</p>
+
+    <p>
+        <input type="text" ng-model="TodoCtrl.todoAddValue"><br/>
+        <button name="addingBtn" ng-click="TodoCtrl.Todo('Add')">Add</button>
+    </p>
+    <div>
+        <p>Your Todo:</p>
+        <p><button name="editBtn" ng-click="TodoCtrl.Todo('Edit')">Edit</button></p>
+        <div><ol>
+        <li   ng-repeat="i in TodoCtrl.resultOptions">
+            {{i}}
+          
+        <button name="delBtn" ng-click="TodoCtrl.Todo('Delete')">Delete</button> <br/>
+    </li>
+       
+         
+    </ol>
+    </div>
+        
+    </div>
+</body>
+
+</html>

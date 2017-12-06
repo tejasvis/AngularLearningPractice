@@ -1,0 +1,32 @@
+<html ng-app="moreDirectives">
+    <head>
+        <title>Directives App</title>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body>
+        <h1>Directives</h1>
+        <div ng-controller="MoreDirCtrller as ctrl">
+            <input type="checkbox" ng-model="ctrl.myCheck">
+            <p ng-hide="ctrl.myCheck">Some Content</p>
+
+            <div ng-repeat="i in ctrl.myLis">
+                    <p>Element index: {{$index}}</p>
+                    <p>Element First: {{$first}}</p>
+                    <p>Element even: {{$even}}</p>
+               <p>Name:{{i.name}}</p>
+               <p>Age:{{i.age}}</p>
+               <p>Element middle: {{$middle}}</p>
+               <p>Element odd: {{$odd}}</p>
+               <p>Element last: {{$last}}</p>
+               
+
+            <hr/>
+            
+            
+            </div>
+        </div>
+
+    </body>
+</html>

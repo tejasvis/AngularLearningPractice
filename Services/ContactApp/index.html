@@ -1,0 +1,46 @@
+<html ng-app="contactApp">
+    <head>
+        <meta charset="utf-8">
+        <title> ContactsApp on Services</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        <script src="appConfig.service.js"></script>
+        <script src="appname.service.js"></script>
+        <script src="contact.controller.js"></script>
+        <script src="contactData.service.js"></script>
+    </head>
+    <body>
+        <!--
+        <div ng-controller="HeaderCtrl as head">
+                <h1>{{head.appTitle}}</h1>
+        </div>-->
+        
+        <div class="container" ng-controller="contactCtrl as conCtrl">
+            <div class="row">
+          <ul class="list-group">
+          <li class="list-group-item" ng-repeat="contact in conCtrl.contacts" ng-click="conCtrl.selectedContact($index)">   
+              {{contact.name.first}}  {{contact.name.last}}</li>
+            
+          </ul>
+        </div>
+        <div class="row">
+            <div class="media">
+                <img class="mr-3" ng-src="{{conCtrl.contactSelected.picture.medium}}" alt="Generic placeholder image">
+                <div class="media-body" >
+                    <h5 class="mt-0">{{conCtrl.contactSelected.name.first+","+conCtrl.contactSelected.name.last}}</h5>
+                    <p>{{conCtrl.contactSelected.location.street +","+ conCtrl.contactSelected.location.city+","+conCtrl.contactSelected.location.state+","+conCtrl.contactSelected.location.postcode}}</p>
+                    <p>{{conCtrl.contactSelected.email}}</p>
+                    <p>{{conCtrl.contactSelected.phone}}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+<!--
+        <div ng-controller="footerCtrl as foot">
+             <p>  <h4>{{foot.appTitle}}<sub>{{foot.todaysDate}}</sub></h4> </p> -->
+        </div>
+    </body>
+</html>
